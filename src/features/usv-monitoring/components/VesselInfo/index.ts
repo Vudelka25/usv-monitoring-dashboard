@@ -1,0 +1,1 @@
+export { VesselInfo } from './VesselInfo'

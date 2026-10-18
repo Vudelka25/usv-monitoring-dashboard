@@ -1,0 +1,18 @@
+// Shared design tokens for the USV Monitoring feature. Include inside the dashboard root so they stay scoped to it.
+@mixin design-tokens {
+  --surface-base: #0b0d10;
+  --surface: #14181d;
+  --surface-raised: #1b2027;
+  --line: #343b45;
+  --text-primary: #f4f7fa;
+  --text-secondary: #a9b2bd;
+  --control-line: #6b737d;
+  --normal: #42b87a;
+  --advisory: #f2a329;
+  --critical: #ed3840;
+  --critical-surface: #290e11;
+  --critical-label: #f05a60;
+  --map-accent: #2563eb;
+  --fresh: #22c55e;
+  --last-known: #f59e0b;
+}

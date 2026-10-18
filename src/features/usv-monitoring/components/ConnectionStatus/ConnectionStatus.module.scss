@@ -1,0 +1,91 @@
+.connectionStatus {
+  position: relative;
+  height: 68px;
+  margin: 6px 14px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--surface);
+
+  &[data-status='gps-advisory'] {
+    border-color: var(--advisory);
+  }
+
+  &[data-status='offline'] {
+    border-color: var(--advisory);
+  }
+
+  &[data-status='battery-critical'] {
+    border-color: var(--critical);
+    background: var(--critical-surface);
+  }
+
+  &[data-status='gps-advisory'] .connectionStatus__title,
+  &[data-status='offline'] .connectionStatus__title {
+    color: var(--advisory);
+  }
+
+  &__icon {
+    position: absolute;
+    top: 9px;
+    left: 17px;
+    display: block;
+  }
+
+  &__copy {
+    position: absolute;
+    top: 10px;
+    left: 45px;
+  }
+
+  &__heading {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    min-height: 17px;
+  }
+
+  &__title {
+    margin: 0;
+    color: var(--text-primary);
+    font-size: 14px;
+    font-weight: 600;
+    line-height: normal;
+  }
+
+  &__category {
+    min-width: 48px;
+    color: var(--critical-label);
+    font-size: 10px;
+    font-weight: 600;
+    line-height: normal;
+  }
+
+  &__description {
+    position: absolute;
+    top: 27px;
+    left: 0;
+    width: max-content;
+    margin: 0;
+    color: var(--text-secondary);
+    font-size: 10px;
+    line-height: normal;
+  }
+}
+
+@media (max-width: 600px) {
+  .connectionStatus {
+    height: auto;
+    min-height: 68px;
+    margin: 6px 10px;
+
+    &__copy {
+      right: 10px;
+    }
+
+    &__description {
+      width: auto;
+      max-width: calc(100vw - 86px);
+      white-space: normal;
+    }
+  }
+}

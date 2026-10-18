@@ -1,0 +1,30 @@
+@use '../../styles/mixins';
+@use '../../styles/tokens';
+
+.errorFallback {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  padding: 16px;
+  text-align: center;
+  color: var(--text-primary);
+  font-size: 13px;
+  line-height: 1.45;
+
+  // Outside the dashboard the tokens are not inherited, so the full-page variant defines them itself.
+  &--page {
+    min-height: 100vh;
+    @include tokens.design-tokens;
+  }
+
+  &__message {
+    margin: 0;
+  }
+
+  &__button {
+    max-width: 200px;
+    @include mixins.action-button;
+  }
+}

@@ -1,0 +1,108 @@
+.vesselMarker {
+  &__icon {
+    transition: filter 160ms ease-out;
+
+    &:hover {
+      filter: drop-shadow(0 0 6px rgba(255, 255, 255, 0.9));
+    }
+  }
+
+  &:global(.leaflet-popup) {
+    margin-bottom: 14px;
+  }
+
+  :global(.leaflet-popup-content-wrapper) {
+    padding: 0;
+    border: 1px solid var(--map-accent);
+    border-radius: 8px;
+    background: var(--surface);
+    color: var(--text-primary);
+    box-shadow: none;
+  }
+
+  :global(.leaflet-popup-content) {
+    margin: 0;
+    font-family: 'Inter Variable', Inter, sans-serif;
+    font-size: 12px;
+    line-height: 1.45;
+  }
+
+  :global(.leaflet-popup-tip-container) {
+    display: none;
+  }
+
+  &__card {
+    position: relative;
+    padding: 12px 36px 12px 14px;
+    text-align: left;
+  }
+
+  &__name {
+    color: var(--text-primary);
+    font-weight: 700;
+  }
+
+  &__coordinates {
+    color: var(--text-primary);
+  }
+
+  &__accuracy {
+    color: var(--text-secondary);
+  }
+
+  &__freshness {
+    &[data-state='fresh'] {
+      color: var(--fresh);
+    }
+
+    &[data-state='last-known'] {
+      color: var(--last-known);
+    }
+  }
+
+  &__close {
+    position: absolute;
+    top: 6px;
+    right: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 22px;
+    height: 22px;
+    padding: 0;
+    border: 0;
+    background: none;
+    color: var(--text-secondary);
+    font: inherit;
+    font-size: 18px;
+    line-height: 1;
+    cursor: pointer;
+
+    &:focus-visible {
+      border-radius: 4px;
+      outline: 2px solid var(--map-accent);
+    }
+  }
+
+  &__arrow {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -11px;
+    overflow: visible;
+    pointer-events: none;
+  }
+
+  &__arrowPath {
+    fill: var(--surface);
+    stroke: var(--map-accent);
+    stroke-width: 1;
+    stroke-linejoin: round;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .vesselMarker__icon {
+    transition: none;
+  }
+}

@@ -1,0 +1,62 @@
+@use '../../styles/tokens';
+
+.usvMonitoring {
+  @include tokens.design-tokens;
+
+  width: 100%;
+  max-width: 1440px;
+  min-height: 900px;
+  margin: 0 auto;
+  background: var(--surface-base);
+  color: var(--text-primary);
+  font-family: 'Inter Variable', Inter, sans-serif;
+  font-size: 13px;
+  line-height: 1.45;
+
+  &__workspace {
+    position: relative;
+    display: grid;
+    grid-template-columns: 232px minmax(0, 820px) 332px;
+    grid-template-rows: minmax(0, 1fr);
+    column-gap: 14px;
+    row-gap: 16px;
+    height: calc(100svh - 152px);
+    width: calc(100% - 28px);
+    margin: 0 14px;
+    grid-template-areas: 'vessel map details';
+  }
+}
+
+@media (min-width: 1101px) and (max-height: 899px) {
+  .usvMonitoring {
+    height: 100svh;
+    min-height: 0;
+    overflow: hidden;
+  }
+}
+
+@media (max-width: 1100px) {
+  .usvMonitoring {
+    &__workspace {
+      height: auto;
+      grid-template-columns: minmax(0, 1fr);
+      grid-template-rows: auto;
+      grid-template-areas:
+        'vessel'
+        'map'
+        'details';
+      row-gap: 14px;
+    }
+  }
+}
+
+@media (max-width: 600px) {
+  .usvMonitoring {
+    min-height: 100vh;
+
+    &__workspace {
+      width: calc(100% - 20px);
+      margin: 0 10px;
+    }
+  }
+}

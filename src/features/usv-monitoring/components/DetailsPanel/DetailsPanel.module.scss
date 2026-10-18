@@ -1,0 +1,136 @@
+@use '../../styles/mixins';
+
+.detailsPanel__eyebrow {
+  @include mixins.eyebrow;
+}
+
+.detailsPanel__actionButton {
+  @include mixins.action-button;
+}
+
+.detailsPanel {
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: var(--surface);
+  display: flex;
+  grid-area: details;
+  flex-direction: column;
+  height: 100%;
+  min-height: 0;
+  padding: 13px 14px;
+
+  &__title {
+    margin: 0;
+    color: var(--normal);
+    font-size: 13px;
+    font-weight: 650;
+
+    &[data-status='gps-advisory'] {
+      color: var(--advisory);
+    }
+
+    &[data-status='battery-critical'],
+    &[data-status='offline'] {
+      color: var(--critical);
+    }
+  }
+
+  &__summaryValue {
+    margin: 28px 0 0;
+    color: var(--text-primary);
+    font-size: 15px;
+    font-weight: 650;
+  }
+
+  & > &__summaryValue + &__value {
+    margin-top: 11px;
+  }
+
+  &__label {
+    margin: 27px 0 0;
+    color: var(--text-secondary);
+    font-size: 12px;
+    font-weight: 600;
+
+    &[data-status='battery-critical'],
+    &[data-status='offline'] {
+      color: var(--critical);
+    }
+  }
+
+  &__value {
+    margin: 17px 0 0;
+    color: var(--text-primary);
+    font-size: 13px;
+  }
+
+  &__emphasis {
+    margin: 22px 0 0;
+    color: var(--advisory);
+    font-size: 16px;
+    font-weight: 650;
+  }
+
+  & > &__eyebrow {
+    margin-top: 34px;
+  }
+
+  &__freshness {
+    margin: 30px 0 0;
+    color: var(--text-secondary);
+    font-size: 12px;
+
+    &[data-status='normal'] {
+      color: var(--normal);
+    }
+
+    &[data-gps-stale='true'] {
+      color: var(--last-known);
+    }
+  }
+
+  &__staleText {
+    margin: 13px 0 0;
+    color: var(--advisory);
+    font-size: 12px;
+  }
+
+  &__consequence {
+    margin: 24px 0 0;
+    color: var(--advisory);
+    font-size: 12px;
+  }
+
+  &__helperText {
+    margin: 32px 0 24px;
+    color: var(--text-secondary);
+    font-size: 12px;
+  }
+
+  & > &__actionButton + &__actionButton {
+    margin-top: 8px;
+  }
+
+  & > &__actionButton {
+    flex: 0 0 auto;
+    margin-top: 10px;
+  }
+}
+
+@media (min-width: 1101px) and (max-height: 883px) {
+  .detailsPanel {
+    overflow-y: auto;
+    scrollbar-width: none;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
+}
+
+@media (max-width: 1100px) {
+  .detailsPanel {
+    height: auto;
+    min-height: 280px;
+  }
+}

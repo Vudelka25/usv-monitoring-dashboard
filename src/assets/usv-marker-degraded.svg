@@ -1,0 +1,18 @@
+<svg preserveAspectRatio="none" overflow="visible" style="display: block;" width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="Map Marker / USV / Compact / Degraded" clip-path="url(#clip0_0_30)">
+<path id="Vector" d="M15 28.8462C22.647 28.8462 28.8462 22.647 28.8462 15C28.8462 7.35298 22.647 1.15385 15 1.15385C7.35298 1.15385 1.15385 7.35298 1.15385 15C1.15385 22.647 7.35298 28.8462 15 28.8462Z" fill="#0B0D10" fill-opacity="0.95" stroke="white" stroke-width="2"/>
+<path id="Vector_2" d="M15 25.9615C21.0539 25.9615 25.9615 21.0539 25.9615 15C25.9615 8.94611 21.0539 4.03846 15 4.03846C8.94611 4.03846 4.03846 8.94611 4.03846 15C4.03846 21.0539 8.94611 25.9615 15 25.9615Z" stroke="#FFBD4A" stroke-width="2"/>
+<g id="Group">
+<path id="Vector_3" d="M19.1907 24.5015C20.6659 20.6981 20.387 15.7768 18.0588 10.4982L14.6749 5.68519C11.9427 5.20882 9.83122 6.14008 8.34061 8.47897L9.61304 14.2232C11.9412 19.5018 15.3873 23.0263 19.1907 24.5015Z" fill="white" stroke="#0B0D10" stroke-width="2"/>
+<g id="Vector_4">
+<path d="M17.0953 19.7508L12.439 9.19353Z" fill="black"/>
+<path d="M17.0953 19.7508L12.439 9.19353" stroke="#0B0D10" stroke-width="1.7"/>
+</g>
+</g>
+</g>
+<defs>
+<clipPath id="clip0_0_30">
+<rect width="30" height="30" fill="white"/>
+</clipPath>
+</defs>
+</svg>
