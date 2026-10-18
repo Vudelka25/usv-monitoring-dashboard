@@ -81,6 +81,20 @@ describe('createMockTelemetryStream', () => {
     stream.stop()
   })
 
+  it('initializes the GPS fix timestamp when GPS advisory is selected before start', () => {
+    const samples: TelemetrySample[] = []
+    const timestamp = 1_700_000_000_000
+    const stream = createMockTelemetryStream({ now: () => timestamp })
+    stream.subscribe((sample) => samples.push(sample))
+    stream.setScenario('gps-advisory')
+    stream.start()
+    vi.advanceTimersByTime(1_000)
+    stream.stop()
+
+    expect(samples[0].gps.fixTimestamp).toBe(timestamp)
+    expect(samples[0].gps.fixTimestamp).toBe(samples[0].timestamp)
+  })
+
   it('moves gradually from the previous coordinates and varies readings', () => {
     const samples: TelemetrySample[] = []
     const stream = createMockTelemetryStream({ random: () => 0.75 })

@@ -96,7 +96,7 @@ export function createMockTelemetryStream(
   let requestedRunning = false
   let intervalId: ReturnType<typeof setInterval> | undefined
   let sequenceNumber = 0
-  let gpsFixTimestamp = 0
+  let gpsFixTimestamp: number | undefined
   let gps = {
     latitude: USV_VESSEL.initialLatitude,
     longitude: USV_VESSEL.initialLongitude,
@@ -136,6 +136,7 @@ export function createMockTelemetryStream(
   function createSample(): TelemetrySample {
     sequenceNumber += 1
     const timestamp = now()
+    if (gpsFixTimestamp === undefined) gpsFixTimestamp = timestamp
     const gpsFrozen =
       scenario === 'gps-advisory' ||
       (scenario === 'normal' &&
