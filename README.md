@@ -37,7 +37,7 @@ No backend or API credentials are required. Map tiles require internet access. V
 
 ## How to Use the Dashboard
 
-### Interactive Anomaly Testing
+### Interactive Alert Testing
 
 Use the **Telemetry mode** selector in the top-right corner of the dashboard to manually trigger scenarios and observe changes in status indicators, warnings, and telemetry information. Readings update on the next simulated sample; GPS staleness and disconnection indicators follow the timing described below.
 
@@ -77,7 +77,7 @@ The overview keeps vessel position, orientation, battery condition, and connecti
 
 GPS fix age is tracked separately from stream activity: incoming pose and battery readings do not make an old GPS fix fresh. Stale GPS and disconnected telemetry are identified as last-known information, helping operators distinguish retained data from current observations.
 
-## Real-Time Anomaly Guardian
+## Telemetry Health Monitoring & Alerts
 
 The dashboard uses explicit rules rather than an advanced anomaly detection algorithm:
 
@@ -152,7 +152,7 @@ Run these commands from the project directory:
 
 ## Limitations
 
-- All vessel data and anomalies are simulated; there is no hardware connection, backend, or autonomous control.
+- All vessel data and alert conditions are simulated; there is no hardware connection, backend, or autonomous control.
 - The automatic scenario is an accelerated demonstration driven by sample count, not a physical battery or navigation model.
 - OpenStreetMap tiles depend on external network availability.
 - There is no telemetry history, persistence, or multi-vessel monitoring.
